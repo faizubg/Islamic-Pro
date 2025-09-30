@@ -2,40 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Welcome - Islamic App</title>
+  <title>Welcome - Islamic Pro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
   <style>
-    /* Keep your original CSS here — no changes needed */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://images.unsplash.com/photo-1583241468253-9ff7f1f4f3f6?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      z-index: 0;
+    }
+
+    .welcome-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 2.5em 2em;
+      max-width: 400px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .welcome-card img {
+      width: 70px;
+      margin-bottom: 1em;
+      border-radius: 50%;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 2px 16px #00b89455;
+    }
+
+    .welcome-card h1 {
+      color: #fff;
+      font-size: 1.9em;
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 12px #0f172a99;
+    }
+
+    .welcome-card p {
+      color: #eaeaea;
+      font-size: 1.1em;
+      margin-bottom: 2em;
+    }
+
+    .enter-btn {
+      background: linear-gradient(135deg, #00b894, #55efc4);
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: 0.9em 1.5em;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 184, 148, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .enter-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 184, 148, 0.6);
+    }
+
+    .lang-switch {
+      margin-top: 1.5em;
+      color: #f3faec;
+      font-size: 1em;
+    }
+
+    select {
+      padding: 0.4em;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+      margin-left: 0.5em;
+    }
+
+    @media (max-width: 600px) {
+      .welcome-card {
+        padding: 1.5em 1em;
+      }
+      .welcome-card h1 {
+        font-size: 1.5em;
+      }
+      .enter-btn {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
-  <div class="signin-card">
+  <div class="welcome-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Mosque_icon.png" alt="Islamic App Logo" />
     <h1>Welcome to Islamic Pro</h1>
-    <p>Access Quran, Azkar, Prayer Times &amp; More.</p>
-
-    <!-- Replace sign-in buttons with a simple "Enter App" button -->
-    <button class="signin-btn" onclick="enterApp()">
-      <i class="ri-arrow-right-line"></i> Enter App
-    </button>
-
+    <p>Explore Quran, Azkar, Prayer Times & More — no account needed.</p>
+    <button class="enter-btn" onclick="enterApp()">Enter App</button>
     <div class="lang-switch">
-      <span>🌙 Choose your language: 
-        <select id="language-select">
-          <option value="en">English</option>
-          <option value="ar">عربي</option>
-        </select>
-      </span>
+      🌙 Language: 
+      <select id="language-select">
+        <option value="en">English</option>
+        <option value="ar">عربي</option>
+      </select>
     </div>
   </div>
 
   <script>
     function enterApp() {
-      // Redirect to your main app page
-      window.location.href = "app.html";
+      window.location.href = "app.html"; // Replace with your actual app page
     }
 
     document.getElementById('language-select').onchange = function () {
