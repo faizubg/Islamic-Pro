@@ -2,149 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sign In - Islamic App</title>
+  <title>Welcome - Islamic App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <!-- Remixicon for icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
   <style>
-    body {
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15,23,42,0.60);
-      z-index: 0;
-      pointer-events: none;
-    }
-    .signin-card {
-      position: relative;
-      background: rgba(255,255,255,0.20);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(44,62,80,0.22);
-      backdrop-filter: blur(10px);
-      border: 1.5px solid rgba(255,255,255,0.19);
-      padding: 2.5em 2.1em 2em 2.1em;
-      width: 100%;
-      max-width: 380px;
-      z-index: 1;
-      text-align: center;
-      animation: float-in 1.3s cubic-bezier(.17,.67,.83,.67);
-    }
-    @keyframes float-in {
-      from { transform: translateY(60px) scale(0.9); opacity: 0; }
-      to { transform: none; opacity: 1; }
-    }
-    .signin-card img {
-      width: 60px;
-      margin-bottom: 1em;
-      border-radius: 50%;
-      box-shadow: 0 2px 16px #00b89455;
-      border: 3px solid #fff;
-      background: #fff;
-      padding: 4px;
-    }
-    .signin-card h1 {
-      color: #fff;
-      margin: 0 0 7px 0;
-      font-size: 1.8em;
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-shadow: 0 2px 12px #0f172a99;
-    }
-    .signin-card p {
-      color: #eaeaea;
-      margin: 0 0 1.7em 0;
-      font-size: 1.06em;
-      font-weight: 400;
-      letter-spacing: .5px;
-    }
-    .signin-btn {
-      width: 100%;
-      border: none;
-      border-radius: 13px;
-      font-size: 1.09em;
-      font-weight: 600;
-      padding: 0.9em 0;
-      margin-bottom: 1.1em;
-      color: #222;
-      background: #fff;
-      box-shadow: 0 2px 8px #00b89433;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.9em;
-      cursor: pointer;
-      transition: background 0.18s, color 0.18s, transform 0.13s;
-      outline: none;
-      position: relative;
-      overflow: hidden;
-    }
-    .signin-btn:active {
-      background: #e0f7fa;
-      color: #0984e3;
-      transform: scale(0.98);
-    }
-    .signin-btn.google {
-      background: linear-gradient(90deg,#fff 85%, #d4fc79 100%);
-      color: #232323;
-    }
-    .signin-btn.apple {
-      background: linear-gradient(90deg,#fff 80%, #b2bec3 100%);
-      color: #232323;
-    }
-    .signin-btn .ri {
-      font-size: 1.45em;
-      margin-right: 0.2em;
-    }
-    .lang-switch {
-      margin-top: 12px;
-      color: #f3faec;
-      font-size: 1em;
-      text-align: center;
-      opacity: 0.92;
-    }
-    .divider {
-      border: none;
-      border-top: 1.5px solid #f4fefc33;
-      margin: 1.6em 0 1.1em 0;
-      position: relative;
-    }
-    .divider:before {
-      content: "or";
-      position: absolute;
-      left: 50%; top: -13px;
-      background: rgba(255,255,255,0.85);
-      color: #0984e3;
-      font-size: 1em;
-      padding: 0 10px;
-      border-radius: 9px;
-      transform: translateX(-50%);
-      letter-spacing: 2.5px;
-      font-weight: 500;
-    }
-    #login-error {
-      color: #ff5050;
-      font-weight: 500;
-      margin-top: .8em;
-      min-height: 1.2em;
-      font-size: .99em;
-    }
-    @media (max-width: 650px) {
-      .signin-card { padding: 1.2em .5em 1.2em .5em; }
-      .signin-card h1 { font-size: 1.25em; }
-      .signin-btn { font-size: 1em; }
-    }
+    /* Keep your original CSS here — no changes needed */
   </style>
 </head>
 <body>
@@ -152,16 +15,13 @@
   <div class="signin-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Mosque_icon.png" alt="Islamic App Logo" />
     <h1>Welcome to Islamic Pro</h1>
-    <p>
-      Sign in to access Quran, Azkar, Prayer Times &amp; More.
-    </p>
-    <button class="signin-btn google" id="google-signin">
-      <i class="ri-google-fill"></i> Sign in with Google
+    <p>Access Quran, Azkar, Prayer Times &amp; More.</p>
+
+    <!-- Replace sign-in buttons with a simple "Enter App" button -->
+    <button class="signin-btn" onclick="enterApp()">
+      <i class="ri-arrow-right-line"></i> Enter App
     </button>
-    <div class="divider"></div>
-    <button class="signin-btn apple" id="apple-signin">
-      <i class="ri-apple-fill"></i> Sign in with iCloud
-    </button>
+
     <div class="lang-switch">
       <span>🌙 Choose your language: 
         <select id="language-select">
@@ -170,52 +30,17 @@
         </select>
       </span>
     </div>
-    <p id="login-error"></p>
   </div>
 
-  <!-- Firebase SDKs for Auth -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <script>
-    // TODO: Replace with your Firebase config
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      // ...etc
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    // Google sign in
-    document.getElementById('google-signin').onclick = function() {
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider)
-        .then(result => {
-          // Redirect or show app
-          window.location.href = "app.html";
-        })
-        .catch(error => {
-          document.getElementById('login-error').textContent = error.message;
-        });
-    };
-
-    // Apple sign in (web setup needed!)
-    document.getElementById('apple-signin').onclick = function() {
-      var provider = new firebase.auth.OAuthProvider('apple.com');
-      firebase.auth().signInWithPopup(provider)
-        .then(result => {
-          window.location.href = "app.html";
-        })
-        .catch(error => {
-          document.getElementById('login-error').textContent = error.message;
-        });
-    };
-
-    // Language Switch Example (optional for you to use)
-    document.getElementById('language-select').onchange = function() {
-      // You can save preferred language to localStorage or user profile
-      // Example: localStorage.setItem('language', this.value);
-      // Then use it in your app to display Arabic/English
+    function enterApp() {
+      // Redirect to your main app page
+      window.location.href = "app.html";
     }
+
+    document.getElementById('language-select').onchange = function () {
+      localStorage.setItem('language', this.value);
+    };
   </script>
 </body>
 </html>
